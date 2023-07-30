@@ -2,11 +2,7 @@ import cv2
 import numpy as np
 import pytesseract
 
-mission = {
-    "m1": {"index": [], "value": []},
-    "m2": {"index": [], "value": []},
-    "m3": {"index": [], "value": []},
-}
+width, height = 800, 600
 
 
 def detectBinary(image, gray, Lower, Upper):
@@ -41,22 +37,6 @@ def detectShape(image, Lower, Upper):
         return 0, predic
 
 
-def detectNumber(image, gray, Lower, Upper):
-    predic = 0
-    mask_b = cv2.inRange(gray, Lower, Upper)
-    mask_all = cv2.inRange(gray, 0, 255)
-    out_b = cv2.bitwise_and(image, image, mask=mask_b)
-    out_all = cv2.bitwise_and(image, image, mask=mask_all)
-    res_b = np.count_nonzero(out_b)
-    res_all = np.count_nonzero(out_all)
-    if res_all != 0 and res_all > 8000:
-        predic = (res_b / res_all) * 100
-    if predic > 80:
-        return 1, predic
-    else:
-        return 0, predic
-
-
 def binaryList2Decimal(binary_list):
     decimal_value = 0
     power = len(binary_list) - 1
@@ -68,8 +48,14 @@ def binaryList2Decimal(binary_list):
     return decimal_value
 
 
-def robotVision(image_path):
-    image = cv2.imread(image_path)
+def robotVision(image):
+    global mission
+    mission = {
+        "m1": {"index": [], "value": []},
+        "m2": {"index": [], "value": []},
+        "m3": {"index": [], "value": []},
+    }
+
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, thresholded = cv2.threshold(gray_image, 250, 255, cv2.THRESH_BINARY)
     blurred = cv2.GaussianBlur(thresholded, (5, 5), 0)
@@ -114,17 +100,11 @@ def robotVision(image_path):
                 new_gray_image2 = new_gray_image1[y : h + y, x : x + w]
                 if len(mission[f"m3"]["value"]) < 5:
                     custom_config = r"--oem 3 --psm 6 outputbase digits"
-                    colorG, predicN = detectNumber(
-                        new_image2, new_gray_image2, 210, 255
+                    extracted_text = pytesseract.image_to_string(
+                        gray_image, config=custom_config
                     )
-                    if colorG == 1:
-                        extracted_text = pytesseract.image_to_string(
-                            gray_image, config=custom_config
-                        )
-                        numbers_list = [
-                            int(num) for num in extracted_text if num.isdigit()
-                        ]
-                        mission[f"m3"]["value"] = numbers_list
+                    numbers_list = [int(num) for num in extracted_text if num.isdigit()]
+                    mission[f"m3"]["value"] = numbers_list
                 elif len(mission[f"m2"]["value"]) < 5:
                     new_image2 = cv2.cvtColor(new_image2, cv2.COLOR_BGR2HSV)
                     color, predicS = detectShape(new_image2, lower_color, upper_color)
@@ -169,10 +149,8 @@ def robotVision(image_path):
                         (0, 100, 255),
                         2,
                     )
-                # print(len(mission[f"m3"]["value"]))
-    print(mission)
 
-    cv2.imshow("Og image", image)
+    # cv2.imshow("Og image", image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -181,5 +159,7 @@ if __name__ == "__main__":
     image_path = "D:\Programming\Python\AI\RoboInnovator\Missio-768x547.png"
     lower_color = np.array([0, 162, 133])
     upper_color = np.array([179, 176, 169])
-    robotVision(image_path)
-    # detect_polygon(image_path, lower_red, upper_red)
+    frame = cv2.imread(image_path)
+    frame = cv2.resize(frame, (width, height))
+    robotVision(frame)
+    print(mission)
