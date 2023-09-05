@@ -55,15 +55,21 @@ def generate_launch_description():
         ],
         output="screen",
     )
-    node_odom = Node(package="robo_core", executable="odom_node")
-
+    node_pub_odom = Node(package="robo_core", executable="pub_odom_node")
+    tf2_node = Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="static_tf_pub_laser",
+        arguments=["0.23", "0", "0.13", "0", "0", "0", "base_link", "laser"],
+    )
     ld.add_action(node_microros)
+    ld.add_action(node_pub_odom)
     ld.add_action(node_joy)
     ld.add_action(node_controller)
     ld.add_action(node_drive)
     ld.add_action(node_command)
-    ld.add_action(node_rviz)
-    # ld.add_action(node_odom)
+    # ld.add_action(node_rviz)
+    ld.add_action(tf2_node)
     ld.add_action(node_lidar)
 
     return ld

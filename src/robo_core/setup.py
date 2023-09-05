@@ -27,7 +27,7 @@ setup(
             "controller_node = robo_core.controller:main",
             "drive_node = robo_core.drive:main",
             "command_node = robo_core.command:main",
-            "odom_node = robo_core.odom:main",
+            "pub_odom_node = robo_core.pub_odom:main",
         ],
     },
 )

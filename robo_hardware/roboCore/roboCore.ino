@@ -12,7 +12,6 @@
 
 #include <rmw_microros/rmw_microros.h>
 #include <geometry_msgs/msg/twist.h>
-#include <nav_msgs/msg/odometry.h>
 #include <std_msgs/msg/float32.h>
 #include <sensor_msgs/msg/imu.h>
 #include <sensor_msgs/msg/magnetic_field.h>
@@ -164,36 +163,6 @@ int calculateRPM(volatile unsigned long &pulseCount, volatile bool &pulseDetecte
   return currentRPM;
 }
 
-sensor_msgs__msg__Imu imu_getDate()
-{
-  accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-  sensor_msgs__msg__Imu imu;
-  imu.header.frame_id.data = const_cast<char *>("imu_link");
-  imu.header.stamp.sec = millis() / 1000;
-  imu.header.stamp.nanosec = (millis() % 1000) * 1000000;
-  imu.angular_velocity.x = gx * (double)gyro_scale_ * DEG_TO_RAD;
-  imu.angular_velocity.y = gy * (double)gyro_scale_ * DEG_TO_RAD;
-  imu.angular_velocity.z = gz * (double)gyro_scale_ * DEG_TO_RAD;
-  imu.linear_acceleration.x = ax * (double)accel_scale_ * g_to_accel_;
-  imu.linear_acceleration.y = ay * (double)accel_scale_ * g_to_accel_;
-  imu.linear_acceleration.z = az * (double)accel_scale_ * g_to_accel_;
-
-  return imu;
-}
-
-sensor_msgs__msg__MagneticField mag_getData()
-{
-  mag.getHeading(&mx, &my, &mz);
-  sensor_msgs__msg__MagneticField magnet;
-  magnet.header.frame_id.data = const_cast<char *>("imu_link");
-  magnet.header.stamp.sec = millis() / 1000;
-  magnet.header.stamp.nanosec = (millis() % 1000) * 1000000;
-  magnet.magnetic_field.x = mx;
-  magnet.magnetic_field.y = my;
-  magnet.magnetic_field.z = mz;
-  return magnet;
-}
-
 //-----------------------------------------------------------------------------------//
 
 void drive_fun(float pwm_f, float pwm_l, float pwm_r)
@@ -301,22 +270,22 @@ rcl_allocator_t allocator;
 rclc_executor_t executor;
 
 geometry_msgs__msg__Twist genaral_msg;
-nav_msgs__msg__Odometry odom_msg;
 sensor_msgs__msg__Imu imu_msg;
 sensor_msgs__msg__MagneticField mag_msg;
+std_msgs__msg__Float32 theta_msg;
+geometry_msgs__msg__Twist drive_msg;
+geometry_msgs__msg__Twist command_msg;
+geometry_msgs__msg__Twist motor_msg;
 
 rcl_publisher_t publisher_genaral;
+rcl_publisher_t publisher_motor;
 rcl_publisher_t publisher_imu;
 rcl_publisher_t publisher_mag;
-rcl_publisher_t publisher_odom;
 
 // subscriber 1
 rcl_subscription_t subscriber_drive;
 rcl_subscription_t subscriber_theta;
 rcl_subscription_t subscriber_command;
-std_msgs__msg__Float32 theta_msg;
-geometry_msgs__msg__Twist drive_msg;
-geometry_msgs__msg__Twist command_msg;
 
 rcl_init_options_t init_options;
 
@@ -355,9 +324,6 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
       }
     }
 
-    imu_msg = imu_getDate();
-    mag_msg = mag_getData();
-
     unsigned long now = millis();
     float deltha_t = (now - prev_odom_update) / 1000.0;
     prev_odom_update = now;
@@ -370,11 +336,6 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
       lastPulseTime = millis();
     }
 
-    odom_msg.header.frame_id.data = const_cast<char *>("odom");
-    odom_msg.child_frame_id.data = const_cast<char *>("base_footprint");
-    odom_msg.header.stamp.sec = millis() / 1000;
-    odom_msg.header.stamp.nanosec = (millis() % 1000) * 1000000;
-
     float delta_heading = (abs(gz) >= 100) ? gz * (double)gyro_scale_ * DEG_TO_RAD * deltha_t : 0.0;
     heading_ -= delta_heading;
     euler_to_quat(0, 0, heading_, q);
@@ -386,33 +347,41 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     pos_x += average_rps_x * (PI * 0.02465 * 2) * deltha_t;
     pos_y += average_rps_y * (PI * 0.02465 * 2) * deltha_t;
 
-    odom_msg.pose.pose.position.x = pos_x;
-    odom_msg.pose.pose.position.y = pos_y;
-    odom_msg.pose.pose.position.z = 0.0;
+    accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+    imu_msg.header.frame_id.data = const_cast<char *>("imu_link");
+    imu_msg.header.stamp.sec = millis() / 1000;
+    imu_msg.header.stamp.nanosec = (millis() % 1000) * 1000000;
+    imu_msg.angular_velocity.x = gx * (double)gyro_scale_ * DEG_TO_RAD;
+    imu_msg.angular_velocity.y = gy * (double)gyro_scale_ * DEG_TO_RAD;
+    imu_msg.angular_velocity.z = gz * (double)gyro_scale_ * DEG_TO_RAD;
+    imu_msg.linear_acceleration.x = ax * (double)accel_scale_ * g_to_accel_;
+    imu_msg.linear_acceleration.y = ay * (double)accel_scale_ * g_to_accel_;
+    imu_msg.linear_acceleration.z = az * (double)accel_scale_ * g_to_accel_;
 
-    odom_msg.pose.pose.orientation.x = (double)q[1];
-    odom_msg.pose.pose.orientation.y = (double)q[2];
-    odom_msg.pose.pose.orientation.z = (double)q[3];
-    odom_msg.pose.pose.orientation.w = (double)q[0];
-
-    odom_msg.twist.twist.linear.x = average_rps_x * (PI * 0.02465 * 2);
-    odom_msg.twist.twist.linear.y = average_rps_y * (PI * 0.02465 * 2);
-    odom_msg.twist.twist.linear.z = 0.0;
-
-    odom_msg.twist.twist.angular.x = 0.0;
-    odom_msg.twist.twist.angular.y = 0.0;
-    odom_msg.twist.twist.angular.z = gz * (double)gyro_scale_ * DEG_TO_RAD;
+    mag.getHeading(&mx, &my, &mz);
+    mag_msg.header.frame_id.data = const_cast<char *>("imu_link");
+    mag_msg.header.stamp.sec = millis() / 1000;
+    mag_msg.header.stamp.nanosec = (millis() % 1000) * 1000000;
+    mag_msg.magnetic_field.x = mx;
+    mag_msg.magnetic_field.y = my;
+    mag_msg.magnetic_field.z = mz;
 
     genaral_msg.linear.x = float(Encoder_spin.read());
-    genaral_msg.linear.y = q[3];
+    motor_msg.linear.x = pos_x;
+    motor_msg.linear.y = pos_y;
+    motor_msg.linear.z = (double)q[1];
+    motor_msg.angular.x = (double)q[2];
+    motor_msg.angular.y = (double)q[3];
+    motor_msg.angular.z = (double)q[0];
+    // genaral_msg.linear.y = q[3];
     genaral_msg.angular.x = pos_x;
-    genaral_msg.angular.y = pos_y;
-    genaral_msg.angular.z = heading_;
+    genaral_msg.angular.y = pulseCountF;
+    genaral_msg.angular.z = int(pulseDetected_F);
 
     rcl_publish(&publisher_genaral, &genaral_msg, NULL);
     rcl_publish(&publisher_imu, &imu_msg, NULL);
     rcl_publish(&publisher_mag, &mag_msg, NULL);
-    rcl_publish(&publisher_odom, &odom_msg, NULL);
+    rcl_publish(&publisher_motor, &motor_msg, NULL);
   }
 }
 
@@ -459,6 +428,14 @@ bool create_entities()
   // create node
   RCCHECK(rclc_node_init_default(&node, "int32_publisher_rclc", "", &support));
 
+  // create timer,
+  const unsigned int timer_timeout = 100;
+  RCCHECK(rclc_timer_init_default(
+      &timer,
+      &support,
+      RCL_MS_TO_NS(timer_timeout),
+      timer_callback));
+
   // create publisher 1
   RCCHECK(rclc_publisher_init_best_effort(
       &publisher_genaral,
@@ -473,26 +450,19 @@ bool create_entities()
       ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
       "imu/data_raw"));
 
+  // create publisher 3
   RCCHECK(rclc_publisher_init_best_effort(
       &publisher_mag,
       &node,
       ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, MagneticField),
       "imu/mag"));
 
-  // create publisher 3
+  // create publisher 4
   RCCHECK(rclc_publisher_init_best_effort(
-      &publisher_odom,
+      &publisher_motor,
       &node,
-      ROSIDL_GET_MSG_TYPE_SUPPORT(nav_msgs, msg, Odometry),
-      "odom/unfiltered"));
-
-  // create timer,
-  const unsigned int timer_timeout = 100;
-  RCCHECK(rclc_timer_init_default(
-      &timer,
-      &support,
-      RCL_MS_TO_NS(timer_timeout),
-      timer_callback));
+      ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+      "motor_topic"));
 
   // create subscriber 1
   RCCHECK(rclc_subscription_init_default(
@@ -508,7 +478,7 @@ bool create_entities()
       ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
       "command_topic"));
 
-  // create subscriber 2
+  // create subscriber 3
   RCCHECK(rclc_subscription_init_default(
       &subscriber_theta,
       &node,
@@ -534,7 +504,6 @@ void destroy_entities()
   rcl_publisher_fini(&publisher_genaral, &node);
   rcl_publisher_fini(&publisher_imu, &node);
   rcl_publisher_fini(&publisher_mag, &node);
-  rcl_publisher_fini(&publisher_odom, &node);
   rcl_subscription_fini(&subscriber_drive, &node);
   rcl_subscription_fini(&subscriber_command, &node);
   rcl_subscription_fini(&subscriber_theta, &node);
