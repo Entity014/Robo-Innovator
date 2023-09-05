@@ -1,0 +1,11 @@
+drive_node:
+  ros__parameters:
+    speed_motor: 255.0
+
+command_node:
+  ros__parameters:
+    box_pos_1: 610.0
+    box_pos_2: 1223.0
+    box_pos_3: 1839.0
+    box_pos_4: 2457.0
+    box_pos_5: 3077.0
