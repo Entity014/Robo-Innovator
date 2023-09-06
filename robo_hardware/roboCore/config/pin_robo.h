@@ -35,5 +35,9 @@
 #define ENCODER_L 39
 #define ENCODER_R 40
 
+// ? Ultrasonic
+#define echo_pin 3
+#define trig_pin 4
+
 // ? LED
 #define LED_PIN 13

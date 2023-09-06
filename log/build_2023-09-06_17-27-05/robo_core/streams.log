@@ -1,0 +1,24 @@
+[1.810s] Invoking command in '/home/entity014/roboInno_ws/src/robo_core': PYTHONPATH=/home/entity014/roboInno_ws/build/robo_core/prefix_override:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/ros2_ws/build/swap_pillar:/home/entity014/ros2_ws/install/swap_pillar/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/drive_base_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/robo_core build --build-base /home/entity014/roboInno_ws/build/robo_core/build install --record /home/entity014/roboInno_ws/build/robo_core/install.log --install-scripts $base/lib/robo_core --single-version-externally-managed
+[2.431s] running egg_info
+[2.433s] writing ../../build/robo_core/robo_core.egg-info/PKG-INFO
+[2.433s] writing dependency_links to ../../build/robo_core/robo_core.egg-info/dependency_links.txt
+[2.434s] writing entry points to ../../build/robo_core/robo_core.egg-info/entry_points.txt
+[2.434s] writing requirements to ../../build/robo_core/robo_core.egg-info/requires.txt
+[2.434s] writing top-level names to ../../build/robo_core/robo_core.egg-info/top_level.txt
+[2.519s] reading manifest file '../../build/robo_core/robo_core.egg-info/SOURCES.txt'
+[2.521s] writing manifest file '../../build/robo_core/robo_core.egg-info/SOURCES.txt'
+[2.521s] running build
+[2.521s] running build_py
+[2.523s] running install
+[2.525s] running install_lib
+[2.528s] running install_data
+[2.529s] running install_egg_info
+[2.532s] removing '/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core-0.0.0-py3.8.egg-info' (and everything under it)
+[2.533s] Copying ../../build/robo_core/robo_core.egg-info to /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core-0.0.0-py3.8.egg-info
+[2.534s] running install_scripts
+[2.572s] Installing command_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.572s] Installing controller_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.573s] Installing drive_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.573s] Installing pub_odom_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.574s] writing list of installed files to '/home/entity014/roboInno_ws/build/robo_core/install.log'
+[2.648s] Invoked command in '/home/entity014/roboInno_ws/src/robo_core' returned '0': PYTHONPATH=/home/entity014/roboInno_ws/build/robo_core/prefix_override:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/ros2_ws/build/swap_pillar:/home/entity014/ros2_ws/install/swap_pillar/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/drive_base_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/robo_core build --build-base /home/entity014/roboInno_ws/build/robo_core/build install --record /home/entity014/roboInno_ws/build/robo_core/install.log --install-scripts $base/lib/robo_core --single-version-externally-managed

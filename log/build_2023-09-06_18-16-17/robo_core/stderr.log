@@ -1,0 +1,5 @@
+  File "/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/node_goto-point.py", line 2
+    import rclpy.node import Node
+                      ^
+SyntaxError: invalid syntax
+

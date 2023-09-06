@@ -1,0 +1,47 @@
+[0.080s] Invoking command in '/home/entity014/roboInno_ws/build/robo_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --build /home/entity014/roboInno_ws/build/robo_description -- -j8 -l8
+[0.254s] Invoked command in '/home/entity014/roboInno_ws/build/robo_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --build /home/entity014/roboInno_ws/build/robo_description -- -j8 -l8
+[0.537s] Invoking command in '/home/entity014/roboInno_ws/build/robo_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --install /home/entity014/roboInno_ws/build/robo_description
+[0.622s] -- Install configuration: ""
+[0.623s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src
+[0.623s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src/description
+[0.623s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src/description/robo_description.urdf
+[0.624s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/launch
+[0.624s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/launch/display.launch.py
+[0.625s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/rviz
+[0.625s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/rviz/urdf_config.rviz
+[0.625s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src
+[0.625s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src/description
+[0.626s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src/description/robo_description.urdf
+[0.626s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/launch
+[0.626s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/launch/display.launch.py
+[0.626s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/rviz
+[0.626s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/rviz/urdf_config.rviz
+[0.626s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/config
+[0.627s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/config/ekf.yaml
+[0.627s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src
+[0.627s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src/description
+[0.627s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/src/description/robo_description.urdf
+[0.627s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/launch
+[0.627s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/launch/display.launch.py
+[0.628s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/rviz
+[0.628s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/rviz/urdf_config.rviz
+[0.628s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/config
+[0.628s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/config/ekf.yaml
+[0.628s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/world
+[0.628s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/world/my_world.sdf
+[0.629s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/ament_index/resource_index/package_run_dependencies/robo_description
+[0.629s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/ament_index/resource_index/parent_prefix_path/robo_description
+[0.629s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/environment/ament_prefix_path.sh
+[0.629s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/environment/ament_prefix_path.dsv
+[0.630s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/environment/path.sh
+[0.630s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/environment/path.dsv
+[0.630s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/local_setup.bash
+[0.630s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/local_setup.sh
+[0.630s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/local_setup.zsh
+[0.630s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/local_setup.dsv
+[0.631s] -- Installing: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/package.dsv
+[0.631s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/ament_index/resource_index/packages/robo_description
+[0.631s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/cmake/robo_descriptionConfig.cmake
+[0.631s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/cmake/robo_descriptionConfig-version.cmake
+[0.631s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_description/share/robo_description/package.xml
+[0.638s] Invoked command in '/home/entity014/roboInno_ws/build/robo_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --install /home/entity014/roboInno_ws/build/robo_description

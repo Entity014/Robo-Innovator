@@ -1,0 +1,6 @@
+[console_scripts]
+command_node = robo_core.command:main
+controller_node = robo_core.controller:main
+drive_node = robo_core.drive:main
+pub_odom_node = robo_core.pub_odom:main
+

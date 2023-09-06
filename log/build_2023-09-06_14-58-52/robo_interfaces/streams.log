@@ -1,0 +1,195 @@
+[0.067s] Invoking command in '/home/entity014/roboInno_ws/build/robo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake /home/entity014/roboInno_ws/src/robo_interfaces -DCMAKE_INSTALL_PREFIX=/home/entity014/roboInno_ws/install/robo_interfaces
+[0.352s] -- The C compiler identification is GNU 9.4.0
+[0.514s] -- The CXX compiler identification is GNU 9.4.0
+[0.542s] -- Detecting C compiler ABI info
+[0.644s] -- Detecting C compiler ABI info - done
+[0.665s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.665s] -- Detecting C compile features
+[0.667s] -- Detecting C compile features - done
+[0.677s] -- Detecting CXX compiler ABI info
+[0.826s] -- Detecting CXX compiler ABI info - done
+[0.861s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.862s] -- Detecting CXX compile features
+[0.863s] -- Detecting CXX compile features - done
+[0.878s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.967s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.967s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.619s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[1.637s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.663s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.951s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[2.039s] -- Found FastRTPS: /opt/ros/foxy/include  
+[2.261s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.407s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[2.749s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[3.329s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.371s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.484s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[3.537s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[3.675s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5") 
+[3.675s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[3.676s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[3.676s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[3.753s] -- Found PythonExtra: .so  
+[3.852s] -- Configuring done (3.7s)
+[3.902s] -- Generating done (0.0s)
+[3.909s] -- Build files have been written to: /home/entity014/roboInno_ws/build/robo_interfaces
+[3.925s] Invoked command in '/home/entity014/roboInno_ws/build/robo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake /home/entity014/roboInno_ws/src/robo_interfaces -DCMAKE_INSTALL_PREFIX=/home/entity014/roboInno_ws/install/robo_interfaces
+[3.929s] Invoking command in '/home/entity014/roboInno_ws/build/robo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --build /home/entity014/roboInno_ws/build/robo_interfaces -- -j8 -l8
+[3.999s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[4.006s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[4.428s] [  6%] Built target robo_interfaces__cpp
+[4.432s] [  9%] [32mBuilding C object CMakeFiles/robo_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robo_interfaces/msg/detail/dict__functions.c.o[0m
+[4.436s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[4.436s] [ 16%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[4.437s] [ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[4.506s] [ 22%] [32m[1mLinking C shared library librobo_interfaces__rosidl_generator_c.so[0m
+[4.543s] [ 22%] Built target robo_interfaces__rosidl_generator_c
+[4.550s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[4.551s] [ 29%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[4.903s] [ 32%] [32mBuilding CXX object CMakeFiles/robo_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robo_interfaces/msg/dict__type_support.cpp.o[0m
+[4.910s] [ 35%] [32mBuilding C object CMakeFiles/robo_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robo_interfaces/msg/detail/dict__type_support.c.o[0m
+[4.963s] [ 38%] [32m[1mLinking C shared library librobo_interfaces__rosidl_typesupport_introspection_c.so[0m
+[4.980s] [ 41%] [32mBuilding CXX object CMakeFiles/robo_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robo_interfaces/msg/detail/dict__type_support.cpp.o[0m
+[4.997s] [ 41%] Built target robo_interfaces__rosidl_typesupport_introspection_c
+[5.000s] [ 45%] [32mBuilding CXX object CMakeFiles/robo_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robo_interfaces/msg/detail/dds_fastrtps/dict__type_support.cpp.o[0m
+[5.039s] [ 48%] [32mBuilding CXX object CMakeFiles/robo_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robo_interfaces/msg/dict__type_support.cpp.o[0m
+[5.100s] [ 51%] [32m[1mLinking CXX shared library librobo_interfaces__rosidl_typesupport_c.so[0m
+[5.157s] [ 51%] Built target robo_interfaces__rosidl_typesupport_c
+[5.390s] [ 54%] [32m[1mLinking CXX shared library librobo_interfaces__rosidl_typesupport_cpp.so[0m
+[5.434s] [ 54%] Built target robo_interfaces__rosidl_typesupport_cpp
+[5.638s] [ 58%] [32m[1mLinking CXX shared library librobo_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[5.734s] [ 58%] Built target robo_interfaces__rosidl_typesupport_introspection_cpp
+[5.905s] [ 61%] [32m[1mLinking CXX shared library librobo_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[6.029s] [ 61%] Built target robo_interfaces__rosidl_typesupport_fastrtps_cpp
+[6.037s] [ 64%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[6.448s] [ 67%] [32mBuilding CXX object CMakeFiles/robo_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robo_interfaces/msg/detail/dict__type_support_c.cpp.o[0m
+[6.974s] [ 70%] [32m[1mLinking CXX shared library librobo_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[7.093s] [ 70%] Built target robo_interfaces__rosidl_typesupport_fastrtps_c
+[7.106s] [ 70%] Built target robo_interfaces
+[7.120s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[7.784s] [ 74%] Built target robo_interfaces__py
+[7.800s] [ 77%] [32mBuilding C object CMakeFiles/robo_interfaces__python.dir/rosidl_generator_py/robo_interfaces/msg/_dict_s.c.o[0m
+[8.018s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/robo_interfaces/librobo_interfaces__python.so[0m
+[8.059s] [ 80%] Built target robo_interfaces__python
+[8.073s] [ 83%] [32mBuilding C object CMakeFiles/robo_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/robo_interfaces/_robo_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[8.073s] [ 87%] [32mBuilding C object CMakeFiles/robo_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/robo_interfaces/_robo_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[8.074s] [ 90%] [32mBuilding C object CMakeFiles/robo_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/robo_interfaces/_robo_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[8.187s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/robo_interfaces/robo_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[8.187s] [ 96%] [32m[1mLinking CXX shared library rosidl_generator_py/robo_interfaces/robo_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[8.211s] [100%] [32m[1mLinking C shared library rosidl_generator_py/robo_interfaces/robo_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[8.224s] [100%] Built target robo_interfaces__rosidl_typesupport_introspection_c__pyext
+[8.247s] [100%] Built target robo_interfaces__rosidl_typesupport_c__pyext
+[8.272s] [100%] Built target robo_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[8.286s] Invoked command in '/home/entity014/roboInno_ws/build/robo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --build /home/entity014/roboInno_ws/build/robo_interfaces -- -j8 -l8
+[8.432s] Invoking command in '/home/entity014/roboInno_ws/build/robo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --install /home/entity014/roboInno_ws/build/robo_interfaces
+[8.484s] -- Install configuration: ""
+[8.485s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/ament_index/resource_index/rosidl_interfaces/robo_interfaces
+[8.485s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces
+[8.485s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg
+[8.485s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/dict.h
+[8.486s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail
+[8.486s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__struct.h
+[8.486s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__functions.h
+[8.486s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__type_support.h
+[8.486s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__functions.c
+[8.486s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/rosidl_generator_c__visibility_control.h
+[8.487s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/library_path.sh
+[8.487s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/library_path.dsv
+[8.487s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_generator_c.so
+[8.487s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_generator_c.so" to ""
+[8.487s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces
+[8.487s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg
+[8.488s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[8.488s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail
+[8.488s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__rosidl_typesupport_fastrtps_c.h
+[8.488s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_fastrtps_c.so
+[8.489s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[8.489s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces
+[8.490s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg
+[8.490s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[8.490s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail
+[8.490s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dds_fastrtps
+[8.491s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__rosidl_typesupport_fastrtps_cpp.hpp
+[8.491s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[8.491s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[8.492s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces
+[8.492s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg
+[8.492s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[8.492s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail
+[8.492s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__type_support.c
+[8.493s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__rosidl_typesupport_introspection_c.h
+[8.493s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_introspection_c.so
+[8.494s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[8.494s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_c.so
+[8.495s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_c.so" to ""
+[8.495s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces
+[8.495s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg
+[8.496s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/dict.hpp
+[8.496s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[8.496s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail
+[8.497s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__builder.hpp
+[8.497s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__struct.hpp
+[8.500s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__traits.hpp
+[8.500s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__type_support.hpp
+[8.501s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces
+[8.501s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg
+[8.501s] -- Up-to-date: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail
+[8.501s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__rosidl_typesupport_introspection_cpp.hpp
+[8.501s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/include/robo_interfaces/msg/detail/dict__type_support.cpp
+[8.501s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_introspection_cpp.so
+[8.502s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[8.502s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_cpp.so
+[8.502s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__rosidl_typesupport_cpp.so" to ""
+[8.502s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/pythonpath.sh
+[8.503s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/pythonpath.dsv
+[8.503s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/__init__.py
+[8.565s] Compiling '/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/__init__.py'...
+[8.573s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/msg
+[8.573s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/msg/_dict.py
+[8.573s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/msg/_dict_s.c
+[8.574s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/msg/__init__.py
+[8.574s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/robo_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[8.574s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/robo_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[8.574s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/robo_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[8.575s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/robo_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[8.575s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/robo_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[8.576s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages/robo_interfaces/robo_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[8.577s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__python.so
+[8.577s] -- Set runtime path of "/home/entity014/roboInno_ws/install/robo_interfaces/lib/librobo_interfaces__python.so" to ""
+[8.578s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/msg/Dict.idl
+[8.578s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/msg/Dict.msg
+[8.578s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/ament_index/resource_index/package_run_dependencies/robo_interfaces
+[8.578s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/ament_index/resource_index/parent_prefix_path/robo_interfaces
+[8.579s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/ament_prefix_path.sh
+[8.579s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/ament_prefix_path.dsv
+[8.579s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/path.sh
+[8.579s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/environment/path.dsv
+[8.580s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/local_setup.bash
+[8.580s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/local_setup.sh
+[8.580s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/local_setup.zsh
+[8.580s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/local_setup.dsv
+[8.581s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/package.dsv
+[8.581s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/ament_index/resource_index/packages/robo_interfaces
+[8.581s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_generator_cExport.cmake
+[8.582s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_generator_cExport-noconfig.cmake
+[8.582s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[8.582s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[8.583s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_cExport.cmake
+[8.583s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[8.583s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_generator_cppExport.cmake
+[8.584s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[8.584s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[8.584s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_cppExport.cmake
+[8.585s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[8.585s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/rosidl_cmake-extras.cmake
+[8.585s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.585s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[8.586s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[8.586s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.586s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[8.586s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[8.587s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfacesConfig.cmake
+[8.587s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/cmake/robo_interfacesConfig-version.cmake
+[8.587s] -- Installing: /home/entity014/roboInno_ws/install/robo_interfaces/share/robo_interfaces/package.xml
+[8.601s] Invoked command in '/home/entity014/roboInno_ws/build/robo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/entity014/roboInno_ws/install/robo_core:/home/entity014/ros2_ws/install/swap_pillar:/opt/ros/foxy /home/entity014/.local/bin/cmake --install /home/entity014/roboInno_ws/build/robo_interfaces

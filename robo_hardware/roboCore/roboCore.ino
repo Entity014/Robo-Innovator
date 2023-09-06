@@ -1,9 +1,10 @@
 #include <micro_ros_arduino.h>
 #include <Arduino.h>
-#include <Servo.h>
 #include <stdio.h>
 #include <Encoder.h>
 #include <math.h>
+#include <NewPing.h>
+#include <Servo.h>
 
 #include <rcl/rcl.h>
 #include <rcl/error_handling.h>
@@ -23,6 +24,8 @@
 #include <Adafruit_BMP085.h>
 #include "HMC5883L.h"
 #include <SimpleKalmanFilter.h>
+
+#define MAX_DISTANCE 200
 
 #define RCCHECK(fn)              \
   {                              \
@@ -100,6 +103,10 @@ int RPM_F = 0, RPM_L = 0, RPM_R = 0;
 volatile unsigned long pulseCountF = 0, pulseCountL = 0, pulseCountR = 0;
 volatile unsigned long lastPulseTime = 0;
 volatile bool pulseDetected_F = false, pulseDetected_L = false, pulseDetected_R = false;
+
+NewPing sonar(trig_pin, echo_pin, MAX_DISTANCE);
+const unsigned long PING_UPDATE_INTERVAL = 100;
+volatile unsigned long lastPingTime = 0;
 
 SimpleKalmanFilter simpleKalmanFilter(2, 2, 0.01);
 
@@ -256,9 +263,9 @@ void spinning(float pwm)
 
 void gribbing(float thetaA, float thetaHL, float thetaHR)
 {
-  servoArm.write(thetaA);
   servoHandLeft.write(thetaHL);
   servoHandRight.write(thetaHR);
+  servoArm.write(thetaA);
 }
 
 //-----------------------------------------------------------------------------------//
@@ -337,8 +344,7 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     }
 
     float delta_heading = (abs(gz) >= 100) ? gz * (double)gyro_scale_ * DEG_TO_RAD * deltha_t : 0.0;
-    heading_ -= delta_heading;
-    euler_to_quat(0, 0, heading_, q);
+    heading_ += delta_heading;
 
     float rps = (((float)((RPM_F * (preMotorF / abs(preMotorF))) + (RPM_L * (preMotorL / abs(preMotorL))) + (RPM_R * (preMotorR / abs(preMotorR)))) / 3) / 60.0);
     average_rps_x = rps * sin(theta * DEG_TO_RAD) * (preMotorF / abs(preMotorF));      // RPM
@@ -367,16 +373,23 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     mag_msg.magnetic_field.z = mz;
 
     genaral_msg.linear.x = float(Encoder_spin.read());
-    motor_msg.linear.x = pos_x;
-    motor_msg.linear.y = pos_y;
-    motor_msg.linear.z = (double)q[1];
-    motor_msg.angular.x = (double)q[2];
-    motor_msg.angular.y = (double)q[3];
-    motor_msg.angular.z = (double)q[0];
+    motor_msg.linear.x = pos_x * 0.111682;
+    motor_msg.linear.y = pos_y * 0.31009;
+    motor_msg.linear.z = heading_;
+    motor_msg.angular.x = 0.0;
+    motor_msg.angular.y = 0.0;
+    motor_msg.angular.z = 0.0;
+
+    if (millis() - lastPingTime >= PING_UPDATE_INTERVAL)
+    {
+      unsigned int uS = sonar.ping();
+      genaral_msg.angular.y = uS / US_ROUNDTRIP_CM;
+      lastPingTime = millis();
+    }
+
     // genaral_msg.linear.y = q[3];
-    genaral_msg.angular.x = pos_x;
-    genaral_msg.angular.y = pulseCountF;
-    genaral_msg.angular.z = int(pulseDetected_F);
+    genaral_msg.angular.x = heading_ * RAD_TO_DEG;
+    genaral_msg.angular.z = pos_y * 0.31009;
 
     rcl_publish(&publisher_genaral, &genaral_msg, NULL);
     rcl_publish(&publisher_imu, &imu_msg, NULL);

@@ -1,0 +1,27 @@
+[1.858s] Invoking command in '/home/entity014/roboInno_ws/src/robo_core': PYTHONPATH=/home/entity014/roboInno_ws/build/robo_core/prefix_override:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/ros2_ws/build/swap_pillar:/home/entity014/ros2_ws/install/swap_pillar/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/drive_base_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/robo_core build --build-base /home/entity014/roboInno_ws/build/robo_core/build install --record /home/entity014/roboInno_ws/build/robo_core/install.log --install-scripts $base/lib/robo_core --single-version-externally-managed
+[2.508s] running egg_info
+[2.510s] writing ../../build/robo_core/robo_core.egg-info/PKG-INFO
+[2.511s] writing dependency_links to ../../build/robo_core/robo_core.egg-info/dependency_links.txt
+[2.511s] writing entry points to ../../build/robo_core/robo_core.egg-info/entry_points.txt
+[2.511s] writing requirements to ../../build/robo_core/robo_core.egg-info/requires.txt
+[2.511s] writing top-level names to ../../build/robo_core/robo_core.egg-info/top_level.txt
+[2.586s] reading manifest file '../../build/robo_core/robo_core.egg-info/SOURCES.txt'
+[2.589s] writing manifest file '../../build/robo_core/robo_core.egg-info/SOURCES.txt'
+[2.589s] running build
+[2.589s] running build_py
+[2.590s] copying robo_core/node_goto-point.py -> /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+[2.591s] running install
+[2.593s] running install_lib
+[2.596s] copying /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core/node_goto-point.py -> /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+[2.598s] byte-compiling /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/node_goto-point.py to node_goto-point.cpython-38.pyc
+[2.602s] running install_data
+[2.603s] running install_egg_info
+[2.606s] removing '/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core-0.0.0-py3.8.egg-info' (and everything under it)
+[2.607s] Copying ../../build/robo_core/robo_core.egg-info to /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core-0.0.0-py3.8.egg-info
+[2.609s] running install_scripts
+[2.650s] Installing command_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.651s] Installing controller_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.651s] Installing drive_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.652s] Installing pub_odom_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+[2.653s] writing list of installed files to '/home/entity014/roboInno_ws/build/robo_core/install.log'
+[2.727s] Invoked command in '/home/entity014/roboInno_ws/src/robo_core' returned '0': PYTHONPATH=/home/entity014/roboInno_ws/build/robo_core/prefix_override:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_interfaces/lib/python3.8/site-packages:/home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages:/home/entity014/ros2_ws/build/swap_pillar:/home/entity014/ros2_ws/install/swap_pillar/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/home/entity014/ros2_ws/install/drive_base_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/robo_core build --build-base /home/entity014/roboInno_ws/build/robo_core/build install --record /home/entity014/roboInno_ws/build/robo_core/install.log --install-scripts $base/lib/robo_core --single-version-externally-managed

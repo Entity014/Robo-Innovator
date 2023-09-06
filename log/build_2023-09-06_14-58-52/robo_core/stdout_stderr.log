@@ -1,0 +1,55 @@
+running egg_info
+creating ../../build/robo_core/robo_core.egg-info
+writing ../../build/robo_core/robo_core.egg-info/PKG-INFO
+writing dependency_links to ../../build/robo_core/robo_core.egg-info/dependency_links.txt
+writing entry points to ../../build/robo_core/robo_core.egg-info/entry_points.txt
+writing requirements to ../../build/robo_core/robo_core.egg-info/requires.txt
+writing top-level names to ../../build/robo_core/robo_core.egg-info/top_level.txt
+writing manifest file '../../build/robo_core/robo_core.egg-info/SOURCES.txt'
+reading manifest file '../../build/robo_core/robo_core.egg-info/SOURCES.txt'
+writing manifest file '../../build/robo_core/robo_core.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/entity014/roboInno_ws/build/robo_core/build
+creating /home/entity014/roboInno_ws/build/robo_core/build/lib
+creating /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+copying robo_core/command.py -> /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+copying robo_core/drive.py -> /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+copying robo_core/camera.py -> /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+copying robo_core/controller.py -> /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+copying robo_core/pub_odom.py -> /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+copying robo_core/__init__.py -> /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core
+running install
+running install_lib
+creating /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+copying /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core/command.py -> /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+copying /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core/drive.py -> /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+copying /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core/camera.py -> /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+copying /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core/controller.py -> /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+copying /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core/pub_odom.py -> /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+copying /home/entity014/roboInno_ws/build/robo_core/build/lib/robo_core/__init__.py -> /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core
+byte-compiling /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/command.py to command.cpython-38.pyc
+byte-compiling /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/drive.py to drive.cpython-38.pyc
+byte-compiling /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/camera.py to camera.cpython-38.pyc
+byte-compiling /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/controller.py to controller.cpython-38.pyc
+byte-compiling /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/pub_odom.py to pub_odom.cpython-38.pyc
+byte-compiling /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/entity014/roboInno_ws/install/robo_core/share/ament_index
+creating /home/entity014/roboInno_ws/install/robo_core/share/ament_index/resource_index
+creating /home/entity014/roboInno_ws/install/robo_core/share/ament_index/resource_index/packages
+copying resource/robo_core -> /home/entity014/roboInno_ws/install/robo_core/share/ament_index/resource_index/packages
+copying package.xml -> /home/entity014/roboInno_ws/install/robo_core/share/robo_core
+copying launch/robo.launch.py -> /home/entity014/roboInno_ws/install/robo_core/share/robo_core
+copying launch/online_async_launch.py -> /home/entity014/roboInno_ws/install/robo_core/share/robo_core
+creating /home/entity014/roboInno_ws/install/robo_core/share/robo_core/config
+copying config/params.yaml -> /home/entity014/roboInno_ws/install/robo_core/share/robo_core/config
+copying config/mapper_params_online_async.yaml -> /home/entity014/roboInno_ws/install/robo_core/share/robo_core/config
+running install_egg_info
+Copying ../../build/robo_core/robo_core.egg-info to /home/entity014/roboInno_ws/install/robo_core/lib/python3.8/site-packages/robo_core-0.0.0-py3.8.egg-info
+running install_scripts
+Installing command_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+Installing controller_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+Installing drive_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+Installing pub_odom_node script to /home/entity014/roboInno_ws/install/robo_core/lib/robo_core
+writing list of installed files to '/home/entity014/roboInno_ws/build/robo_core/install.log'

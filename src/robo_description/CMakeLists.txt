@@ -24,6 +24,14 @@ install(
 DIRECTORY src launch rviz
 DESTINATION share/${PROJECT_NAME}
 )
+install(
+  DIRECTORY src launch rviz config
+  DESTINATION share/${PROJECT_NAME}
+)
+install(
+  DIRECTORY src launch rviz config world
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
